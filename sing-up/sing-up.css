@@ -1,0 +1,257 @@
+.box {
+  border: 1px solid #c7cad2;
+  width: 38%;
+  min-width: 650px;
+  height: auto;
+  padding-bottom: 40px;
+  text-align: center;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.spacer {
+  height: 160px;
+}
+
+.options {
+  margin-top: 40px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.columns {
+  width: 50%;
+  float: left;
+}
+
+label {
+  font-family: 'Poppins', sans-serif;
+  color: #212121;
+}
+
+.input-center {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.input-div {
+  float: left;
+  width: 40%;
+}
+
+.columns a {
+  font-size: 14px;
+  color: #1A73E8;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 10px 6px 10px;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: -6px;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+}
+
+.columns a:hover {
+  background-color: #F6F9FE;
+  color: #1B66CA;
+}
+
+.box h2 {
+  text-align: center;
+  margin-bottom: 46px;
+  font-weight: 500;
+  color: #202124;
+}
+
+form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.login-img {
+  margin-top: 30px;
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+input {
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 40px;
+  padding: 4px 8px 4px 8px;
+  width: 100%;
+  margin-bottom: 25px;
+
+}
+
+input:focus {
+  border: 2px solid #1A73E8;
+}
+
+.last {
+  margin-bottom: 20px !important;
+}
+
+.box button {
+  float: right;
+  padding: 10px 24px 10px 24px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background-color: #1A73E8;
+  font-size: .875rem;
+  font-weight: 600;
+  color: #f1f1f1f1;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.box button:hover {
+  background-color: #1B66CA;
+  cursor: pointer;
+}
+/*POPUP STYLE*/
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 120px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #10E21F;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  height: 100px;
+  border-radius: 6px;
+  border: none;
+}
+
+.red {
+  background-color: red;
+}
+
+.far {
+  font-size: 34px;
+}
+
+.modal-content p {
+  color: #fafafa;
+  font-size: 26px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.columns br {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .box {
+    height: 900px !important;
+    width: 80% !important;
+    max-width: 900px !important;
+  }
+
+  .login-img {
+    max-width: 170px !important;
+    margin-top: 60px !important;
+  }
+
+  .box button {
+    font-size: 32px;
+    padding: 18px 28px 18px 28px !important;
+  }
+
+  input {
+    height: 46px !important;
+    font-size: 36px;
+  }
+
+  label {
+    font-size: 34px;
+  }
+
+  .box h2 {
+    font-size: 46px;
+  }
+
+  .columns a {
+    font-size: 32px !important;
+    padding-top: 40px !important;
+}
+
+  .columns br {
+    display: block;
+  }
+
+  .box-transition {
+    transition: smooth-out 1s ease;
+  }
+
+@keyframes smooth-out {
+  0%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .box {
+    width: 80%;
+    margin-bottom: 60px;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .mobile-spacer {
+    height: 40px;
+  }
+}
