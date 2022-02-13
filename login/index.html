@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/index/index.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="/logo/logo2.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/logo/logo2.png" alt="logo">
+      </div>
+      <h2>socialyze</h2>
+      <nav>
+        <div class="navABorder">
+          <a href="/index/">Home</a>
+          <div class="navHoverEffect">
+          </div>
+        </div>
+        <div class="navABorder">
+          <a href="#">Rooms</a>
+          <div class="navHoverEffect">
+          </div>
+        </div>
+        <div class="navABorder">
+          <a href="#">Contact</a>
+          <div class="navHoverEffect">
+          </div>
+      </nav>
+    </header>
+
+    <div class="background-loader" id="loader">
+      <div class="lds-facebook"><div></div><div></div><div></div></div>
+    </div>
+    <div class="mobile-spacer"></div>
+    <div class="box">
+      <img src="/logo/logo2.png" alt="" class="login-img">
+
+      <h2>Accedi</h2>
+      <form class="" action="checkLogin.php" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" id="username" value="" required>
+        <label for="username">Password:</label><br>
+        <input type="password" class="last" id="password" name="password" value="" required>
+        <div class="options">
+          <div class="columns">
+            <br>
+            <a href="/sing-up/">Crea un account</a>
+
+          </div>
+
+          <div class="columns">
+            <button type="submit"  id="submit"name="button">Login</button>
+
+          </div>
+        </div>
+        <input type="text" id="encryptPsw" name="encryptPsw" class="hidden" value="">
+      </form>
+    </div>
+
+    <div id="error" class="modal">
+
+      <div class="modal-content red">
+        <p><i class="far fa-times-circle"></i>&nbsp;	Login fallito, password errata</p>
+      </div>
+
+    </div>
+
+    <script src="../loader.js"></script>
+
+    <script src="../encrypt.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+      $('#password').on('input', function() {
+        var input = document.getElementById('password').value;
+        var username = document.getElementById('username').value;
+        var password = SHA256(input);
+        document.getElementById('encryptPsw').value = password;
+        console.log(document.getElementById('encryptPsw').value);
+        console.log(password);
+        });
+    </script>
+  </body>
+</html>

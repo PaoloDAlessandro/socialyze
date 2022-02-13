@@ -1,0 +1,59 @@
+.center {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4vh;
+  height: 800px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 14px;
+}
+
+.account-title {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.account-title h2{
+  font-weight: 500;
+  color: #111111;
+  padding: 10px 0 8px 10px;
+}
+
+.info-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: 60px;
+}
+
+.info-box {
+  float: left;
+  width: 50%;
+  height: 100px;
+}
+
+form #avatar {
+  display: none;
+}
+
+.fa-upload {
+  color: #f1f1f1f1;
+}
+
+.center-div {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-label {
+  padding: 10px 24px;
+  background-color: #1A73E8;
+  color: #f1f1f1f1;
+  border-radius: 4px;
+}
+
+.input-label:hover {
+  cursor: pointer;
+  background-color: #1B66CA;
+}
