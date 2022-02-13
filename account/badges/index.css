@@ -1,0 +1,172 @@
+#categories {
+  width: 82%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 8vh;
+}
+
+.title {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh;
+}
+
+.title h2 {
+  color: #212121;
+  font-size: 32px;
+}
+
+.category-box {
+  width: 10%;
+  min-width: 120px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  transition: .4s;
+  margin: 0 4vw;
+  margin-bottom: 10vh;
+}
+
+.category-box:active {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px 0px inset, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.icon-text {
+  opacity: 0;
+  transition: .2s ease-in;
+}
+
+.category-box:hover {
+  box-shadow: rgba(100, 100, 111, 0.16) 0px 7px 26px 0px;
+}
+
+#Politics-icon:hover ~ #Politics-text {
+  opacity: 1;
+}
+
+#Science-icon:hover ~ #Science-text {
+  opacity: 1;
+}
+
+#Math-icon:hover ~ #Math-text {
+  opacity: 1;
+}
+
+#Gaming-icon:hover ~ #Gaming-text {
+  opacity: 1;
+}
+
+#Marketing-icon:hover ~ #Marketing-text {
+  opacity: 1;
+}
+
+#Personal_finance-icon:hover ~ #Personal_finance-text {
+  opacity: 1;
+}
+
+#Coding-icon:hover ~ #Coding-text {
+  opacity: 1;
+}
+
+#Communication-icon:hover ~ #Communication-text {
+  opacity: 1;
+}
+
+#Engineering-icon:hover ~ #Engineering-text {
+  opacity: 1;
+}
+
+#Chess-icon:hover ~ #Chess-text {
+  opacity: 1;
+}
+
+.category-box i {
+  font-size: 46px;
+  padding: 2.4vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.category-box p {
+  font-size: 13px;
+  font-weight: 600;
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:#414141;
+  margin-top: 4px;
+}
+
+
+#Math-icon {
+  color: #ffb703;
+}
+
+#Science-icon {
+  color: #01C2CC;
+}
+
+#Politics-icon {
+  color: #001d3d;
+}
+
+#Coding-icon {
+  color: #5e60ce;
+}
+
+#Marketing-icon {
+  color: #ff8a5b;
+}
+
+#Communication-icon {
+  color: #52b788;
+}
+
+#Gaming-icon {
+  color: #BE4BDB;
+}
+
+#Personal_finance-icon {
+  color: #3e1f47;
+}
+
+#Engineering-icon {
+  color: #212121;
+}
+
+#Chess-icon {
+  color: #540b0e;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .category-box{
+    margin-bottom: 4vh;
+    width: 50%;
+  }
+
+  .category-box i {
+    font-size: 128px;
+  }
+
+  .category-box p {
+    font-size: 42px;
+    margin-top: 20px;
+  }
+
+
+  .title h2 {
+    font-size: 64px;
+  }
+
+
+}
