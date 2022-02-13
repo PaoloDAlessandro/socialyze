@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  height: 70px;
+  box-shadow: 0 4px 12px #00000014, 0 0 1px #0100001a;
+  padding: 0 40px;
+  background-color: white;
+  z-index: 999;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  float: right;
+  height: 70px;
+  align-items: center;
+}
+
+nav a {
+  color: #212121;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 400;
+  margin: auto;
+  padding: 0 20px;
+  margin-bottom: -3px;
+}
+
+nav a:hover {
+  transition: .4s;
+  color: black;
+}
+
+.navABorder {
+  margin-top: 3px;
+}
+
+.navHoverEffect {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-bottom: 2.6px solid #FFFFFF;
+  transition: .3s;
+}
+
+nav a:hover ~ .navHoverEffect {
+  border-bottom: 2.6px solid #212121;
+
+}
+
+.navHoverEffect:hover {
+  border-bottom: 3px solid #212121;
+}
+
+.logo {
+  width: fit-content;
+}
+
+.logo img {
+  position: absolute;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main {
+  display: flex;
+  margin-top: 60px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.card-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 20%;
+  min-width: 320px;
+  height: 420px;
+  border: 1px solid rgba(221, 221, 221, 0.6);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 12px;
+  margin: 0 30px;
+  margin-bottom: 60px;
+  background-color: white !important;
+  transition: .4s;
+}
+
+.card:hover {
+  box-shadow: rgb(0 0 0 / 10%) 0px 6px 16px;
+}
+
+.card-button {
+  width: 50%;
+  float: right;
+}
+
+.card-bottom {
+  margin-top: 100px;
+}
+
+.header-box1 input {
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 30px;
+  padding: 4px 8px 4px 8px;
+  width: 100%;
+}
+
+.header-box1 input:focus {
+  border: 2px solid #1A73E8;
+
+}
+
+.header-box1 {
+  width: 100%;
+  float: left;
+}
+
+.fa-search {
+  color: #414141;
+}
+
+.header-box2 {
+  width: 0%;
+  float: left;
+  margin-left: -28px;
+  margin-top: 2px;
+}
+
+.card-room-status {
+  float: right;
+  width: 44%;
+}
+
+.card-room-status {
+  color: #2dc653;
+}
+
+.center-search-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  float: left;
+  width: 25%;
+}
+
+.card-button a {
+  padding: 8px 20px;
+  background-color: #1A73E8;
+  color: #f1f1f1;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: right;
+  margin-left: 70px;
+}
+
+.card-button a:hover {
+  background-color:#1B66CA;
+}
+
+.card-title {
+  float: left;
+  width: 60%;
+}
+
+.card-room-size {
+  float: right;
+  width: 40%;
+}
+
+.card-room-size p {
+  font-size: 14px !important;
+  color: #6c757d !important;
+  margin-top: 4px;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.card-img {
+  position: relative;
+}
+
+.card-img img {
+  width: -webkit-fill-available;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 227px;
+}
+
+.icon {
+  margin-left: 20px;
+}
+
+.avatar-container {
+  height: 40px;
+  width: 40px;
+}
+
+.avatar-container a{
+  padding: 0 0 0 10px !important;
+}
+.avatar {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+}
+
+.icon p {
+  margin-top: -34px;
+  position: relative;
+  width: 54px;
+  height: 54px;
+  background-color: #01C2CC;
+  opacity: 1;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.card-text h2{
+  font-weight: 400;
+  font-size: 22px;
+  color: #414141;
+  margin-left: 20px;
+}
+
+.card-text p {
+  font-size: 18px;
+  color: #424242;
+}
+
+.card-text {
+  margin-top: 4px;
+}
+
+.icon i {
+  position: absolute;
+  font-size: 22px;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header h2 {
+  position: absolute;
+  width: fit-content;
+  top: 46%;
+  left: 4.5%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  color: #002C8A;
+}
+
+
+#almostfull {
+  color: #ffb703
+}
+
+#full {
+  color: #ff002b;
+}
+
+#Math {
+  background-color: #ffb703;
+}
+
+#Politics {
+  background-color: #001d3d;
+}
+
+#Coding {
+  background-color: #5e60ce;
+}
+
+#Marketing {
+  background-color: #ff8a5b;
+}
+
+#Communication {
+  background-color: #52b788;
+}
+
+#Gaming {
+  background-color: #BE4BDB;
+}
+
+p[id='Personal finance']{
+  background-color: #3e1f47;
+}
+
+.lvl-icon {
+  position: absolute;
+  right: 4px;
+  top:4px;
+}
+
+.lvl-icon img {
+  min-width: 40px;
+  width: 10%;
+  float: right;
+  height: auto;
+}
+
+.background-blur {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34%;
+  height: auto;
+  background-color: #f2f2f2;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 30px 0 50px 0;
+}
+
+.exit {
+  position: absolute;
+  top: 14px;
+  right: 40px;
+}
+
+.exit p {
+  font-size: 32px;
+  font-weight: 600;
+  color: white;
+}
+
+.exit p:hover {
+  cursor: pointer;
+}
+
+.gotoQuizDiv {
+  margin-top: 40px;
+}
+
+#gotoQuiz {
+  text-align: center;
+  background-color: #002C8A;
+  color: #FFFFFF;
+  padding: 8px 22px;
+  border-radius: 2px;
+  text-decoration: none;
+
+}
+
+#username-nav{
+  font-weight: 600;
+}
+
+#back_pop {
+  display: none;
+}
+
+/*LOADER CSS*/
+
+.background-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.lds-facebook {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #f2f2f2;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+  header, nav {
+    height: 140px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  header h2 {
+    font-size: 32px;
+    left: 10%;
+    top: 48%;
+  }
+
+  nav a {
+    font-size: 30px;
+  }
+
+  .card {
+    min-width: 66vw;
+    margin-bottom: 100px;
+    min-height: 40vh;
+  }
+
+  .card-img img {
+    height: auto;
+  }
+  .icon p {
+    height: 90px;
+    width: 90px;
+    margin-top: -60px;
+  }
+
+  .icon i {
+    font-size: 42px;
+  }
+
+  .card-text h2 {
+    font-size: 46px;
+    margin-left: 3vw;
+  }
+
+  .card-room-size p {
+    font-size: 26px !important;
+  }
+
+  .card-bottom {
+    margin-top: 11.4vh;
+  }
+
+  .card-button a {
+    font-size: 28px;
+    margin-left: 166px;
+    padding: 14px 36px;
+  }
+
+  .card-room-status p {
+    font-size: 28px;
+  }
+
+  .center-search-box {
+    display: none;
+  }
+}
