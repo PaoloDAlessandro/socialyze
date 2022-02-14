@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="navABorder">
-          <a href="#">Rooms</a>
+          <a href="/index/">Rooms</a>
           <div class="navHoverEffect">
           </div>
         </div>
@@ -177,6 +177,25 @@
       <img src="/img/degrade.jpg" alt="">
     </div>
 
+    <div class="spacer">
+
+    </div>
+
+    <div class="diagonal blue">
+      <div class="diagonal-container">
+        <div class="diagonal-box">
+          <h2 id="counter_1">+5000k</h2>
+        </div>
+        <div class="diagonal-box">
+          <h2 id="counter_2">caio</h2>
+        </div>
+        <div class="diagonal-box">
+          <h2 id="counter_3">caio</h2>
+        </div>
+      </div>
+
+    </div>
+
 
     <div class="spacer">
 
@@ -193,4 +212,31 @@
         <p>© Socialyze</p>
       </div>
     </footer>
+
+
+    <script type="text/javascript">
+      const counter_1 = document.getElementById('counter_1');
+      const counter_2 = document.getElementById('counter_2');
+      const counter_3 = document.getElementById('counter_3');
+
+
+      function animateValue(obj, start, end, duration, extraStart, extraEnd) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = extraStart + Math.floor(progress * (end - start) + start) + extraEnd;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+        window.requestAnimationFrame(step);
+      }
+
+      animateValue(counter_1, 0, 50000, 2000, '+', '');
+      animateValue(counter_2, 0, 750, 2000, '', 'k');
+      animateValue(counter_3, 0, 50, 2000, '+', '');
+
+
+    </script>
 </html>

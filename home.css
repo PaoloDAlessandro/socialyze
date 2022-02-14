@@ -70,11 +70,17 @@
 }
 
 .diagonal {
+  position: relative;
   background: #ff595e;
   color: white;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   height: calc(300px + 10vh);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.diagonal-box h2 {
+  font-size: calc(32px + .4vh);
+  font-weight: 600;
 }
 
 .trust-by {
@@ -176,6 +182,20 @@
     background-position: right;
     background-size: 3px 20px;
     background-repeat: repeat-y;
+  }
+
+  .blue {
+    background-color: #4F69F3;
+  }
+
+  .diagonal-container {
+    width: 80%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .home-img {
