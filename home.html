@@ -184,16 +184,35 @@
 
     <div class="diagonal blue">
       <div class="diagonal-container">
-        <div class="diagonal-box">
-          <h2 id="counter_1">+5000k</h2>
+        <div class="diagonal-label">
+          <div class="diagonal-box">
+            <h2 id="counter_1">+50000</h2>
+          </div>
+          <div class="diagonal-box label">
+            <h2>active users</h2>
+          </div>
         </div>
+        <div class="diagonal-label">
+
         <div class="diagonal-box">
-          <h2 id="counter_2">caio</h2>
+          <h2 id="counter_2">750k</h2>
         </div>
-        <div class="diagonal-box">
-          <h2 id="counter_3">caio</h2>
+        <div class="diagonal-box label">
+          <h2>Messages for day</h2>
         </div>
       </div>
+      <div class="diagonal-label">
+        <div class="diagonal-box">
+          <h2 id="counter_3">+50</h2>
+        </div>
+        <div class="diagonal-box label">
+          <h2>partners</h2>
+        </div>
+
+      </div>
+      </div>
+
+
 
     </div>
 
@@ -205,7 +224,6 @@
     <div class="spacer">
 
     </div>
-
 
 
     <footer>
@@ -219,7 +237,20 @@
       const counter_1 = document.getElementById('counter_1');
       const counter_2 = document.getElementById('counter_2');
       const counter_3 = document.getElementById('counter_3');
-
+      var counter_animation = 0;
+      document.addEventListener('scroll', function(e) {
+        if (checkVisible(counter_1) && counter_animation == 0) {
+          animateValue(counter_1, 0, 50000, 3000, '+', '');
+          animateValue(counter_2, 0, 750, 3000, '', 'k');
+          animateValue(counter_3, 0, 50, 3000, '+', '');
+          counter_animation = 1;
+        }
+      });
+      function checkVisible(elm) {
+        var rect = elm.getBoundingClientRect();
+        var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+      }
 
       function animateValue(obj, start, end, duration, extraStart, extraEnd) {
         let startTimestamp = null;
@@ -234,9 +265,6 @@
         window.requestAnimationFrame(step);
       }
 
-      animateValue(counter_1, 0, 50000, 2000, '+', '');
-      animateValue(counter_2, 0, 750, 2000, '', 'k');
-      animateValue(counter_3, 0, 50, 2000, '+', '');
 
 
     </script>
