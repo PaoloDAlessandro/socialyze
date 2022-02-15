@@ -18,17 +18,17 @@
 
       <nav>
         <div class="navABorder">
-          <a href="#">Home</a>
+          <a href="#" id="home">Home</a>
           <div class="navHoverEffect">
           </div>
         </div>
         <div class="navABorder">
-          <a href="/index/">Rooms</a>
+          <a href="/index/" id="rooms">Rooms</a>
           <div class="navHoverEffect">
           </div>
         </div>
         <div class="navABorder">
-          <a href="#">Contact</a>
+          <a href="#" id="contact">Contact</a>
           <div class="navHoverEffect">
           </div>
         </div>
@@ -36,11 +36,14 @@
         <div class="navABorder">
 
         <div class="navABorder">
-          <a href="/login/">Login</a>
+          <a href="/login/" id="login">Login</a>
           <div class="navHoverEffect">
           </div>
         </div>
       </nav>
+      <div class="linkHover" id="linkHover">
+
+      </div>
     </header>
 
     <section id="intro">
@@ -264,8 +267,30 @@
       };
         window.requestAnimationFrame(step);
       }
-
-
-
     </script>
+
+
+      <script type="text/javascript">
+        const linkHover = document.getElementById('linkHover');
+        const home_link = document.getElementById('home');
+        const rooms_link = document.getElementById('rooms');
+        const contact_link = document.getElementById('contact');
+        const login_link = document.getElementById('login');
+
+        animationHover(home_link, 48, -68);
+        animationHover(rooms_link, 54, -162);
+        animationHover(contact_link, 62, -268);
+        animationHover(login_link, 44, -352);
+
+
+        function animationHover(ele, width, position) {
+          ele.addEventListener('mouseover', function(){
+            linkHover.style.width = width + 'px';
+            linkHover.style.right = position + 'px';
+
+          });
+        }
+      </script>
+
+
 </html>
