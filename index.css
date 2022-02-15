@@ -279,8 +279,8 @@ nav a:hover ~ .navHoverEffect {
 header h2 {
   position: absolute;
   width: fit-content;
-  top: 46%;
-  left: 4.5%;
+  top: 48%;
+  left: 5.5%;
   transform: translateY(-50%);
   font-weight: 600;
   color: #002C8A;
