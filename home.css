@@ -173,7 +173,7 @@
     position: relative;
     float: right;
     width: 48px;
-    border-top: 4px solid black;
+    border-top: 4px solid #272727;
     right: -68px;
     bottom: -50px;
     transition: .5s;
