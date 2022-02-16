@@ -31,10 +31,16 @@
   transform: translateY(-50%);
 }
 
-.far, .fas {
+.far, .fas, .fa-solid {
   font-size: 34px;
   margin-left: 20px;
   color: #000000;
+}
+
+.fa-user-group {
+  font-size: 26px;
+  color: #002c8a;
+  margin-top: 4px;
 }
 
 .fa-id-badge, .fa-calendar-check {

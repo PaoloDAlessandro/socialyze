@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="/logo/logo2.ico">
+    <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>Home</title>
   </head>
@@ -88,9 +89,18 @@
     </div>
   </a>
 
+    <a href="/account/friends/">
       <div class="box">
-
+        <div class="alignVO">
+          <div class="col-30">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <div class="col-70">
+            <h4>&nbsp;	 Friends</h4>
+          </div>
+        </div>
       </div>
+    </a>
 
       <a href="/account/log-out/">
       <div class="box">
