@@ -18,17 +18,17 @@
 
       <nav>
         <div class="navABorder">
-          <a href="#">Home</a>
+          <a href="#" id="home">Home</a>
           <div class="navHoverEffect">
           </div>
         </div>
         <div class="navABorder">
-          <a href="#">Rooms</a>
+          <a href="/index/" id="rooms">Rooms</a>
           <div class="navHoverEffect">
           </div>
         </div>
         <div class="navABorder">
-          <a href="#">Contact</a>
+          <a href="#" id="contact">Contact</a>
           <div class="navHoverEffect">
           </div>
         </div>
@@ -36,11 +36,14 @@
         <div class="navABorder">
 
         <div class="navABorder">
-          <a href="/login/">Login</a>
+          <a href="/login/" id="login">Login</a>
           <div class="navHoverEffect">
           </div>
         </div>
       </nav>
+      <div class="linkHover" id="linkHover">
+
+      </div>
     </header>
 
     <div class="background-loader" id="loader">
@@ -93,6 +96,7 @@
       </div>
 
       <div class="icon-container">
+
         <div class="icon-box">
           <div class="icon-background">
             <div class="icon-absolute">
@@ -182,6 +186,44 @@
       <img src="/img/degrade.jpg" alt="">
     </div>
 
+    <div class="spacer">
+
+    </div>
+
+    <div class="diagonal blue">
+      <div class="diagonal-container">
+        <div class="diagonal-label">
+          <div class="diagonal-box">
+            <h2 id="counter_1">+50000</h2>
+          </div>
+          <div class="diagonal-box label">
+            <h2>active users</h2>
+          </div>
+        </div>
+        <div class="diagonal-label">
+
+        <div class="diagonal-box">
+          <h2 id="counter_2">750k</h2>
+        </div>
+        <div class="diagonal-box label">
+          <h2>Messages for day</h2>
+        </div>
+      </div>
+      <div class="diagonal-label">
+        <div class="diagonal-box">
+          <h2 id="counter_3">+50</h2>
+        </div>
+        <div class="diagonal-box label">
+          <h2>partners</h2>
+        </div>
+
+      </div>
+      </div>
+
+
+
+    </div>
+
 
     <div class="spacer">
 
@@ -190,14 +232,75 @@
     <div class="spacer">
 
     </div>
-
 
     <footer>
       <div class="copyright">
         <p>© Socialyze</p>
       </div>
     </footer>
+<<<<<<< HEAD
     <script src="loader.js">
 
     </script>
+=======
+
+
+    <script type="text/javascript">
+      const counter_1 = document.getElementById('counter_1');
+      const counter_2 = document.getElementById('counter_2');
+      const counter_3 = document.getElementById('counter_3');
+      var counter_animation = 0;
+      document.addEventListener('scroll', function(e) {
+        if (checkVisible(counter_1) && counter_animation == 0) {
+          animateValue(counter_1, 0, 50000, 3000, '+', '');
+          animateValue(counter_2, 0, 750, 3000, '', 'k');
+          animateValue(counter_3, 0, 50, 3000, '+', '');
+          counter_animation = 1;
+        }
+      });
+      function checkVisible(elm) {
+        var rect = elm.getBoundingClientRect();
+        var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+      }
+
+      function animateValue(obj, start, end, duration, extraStart, extraEnd) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = extraStart + Math.floor(progress * (end - start) + start) + extraEnd;
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+        window.requestAnimationFrame(step);
+      }
+    </script>
+
+
+      <script type="text/javascript">
+        const linkHover = document.getElementById('linkHover');
+        const home_link = document.getElementById('home');
+        const rooms_link = document.getElementById('rooms');
+        const contact_link = document.getElementById('contact');
+        const login_link = document.getElementById('login');
+
+        animationHover(home_link, 48, -68);
+        animationHover(rooms_link, 54, -162);
+        animationHover(contact_link, 62, -268);
+        animationHover(login_link, 44, -352);
+
+
+        function animationHover(ele, width, position) {
+          ele.addEventListener('mouseover', function(){
+            linkHover.style.width = width + 'px';
+            linkHover.style.right = position + 'px';
+
+          });
+        }
+      </script>
+
+
+>>>>>>> 47a8457d443f5cd200d04272f44b8725fdaa749b
 </html>

@@ -66,6 +66,9 @@ nav a:hover {
   margin-top: 3px;
 }
 
+/*DEPRECATE NAV HOVER STYLE*/
+
+/*
 .navHoverEffect {
   margin-left: auto;
   margin-right: auto;
@@ -76,13 +79,13 @@ nav a:hover {
 
 nav a:hover ~ .navHoverEffect {
   border-bottom: 2.6px solid #212121;
-
 }
 
 .navHoverEffect:hover {
   border-bottom: 3px solid #212121;
 }
 
+*/
 .logo {
   width: fit-content;
 }

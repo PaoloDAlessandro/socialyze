@@ -70,11 +70,29 @@
 }
 
 .diagonal {
+  position: relative;
   background: #ff595e;
   color: white;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   height: calc(300px + 10vh);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.diagonal-box h2 {
+  font-size: calc(32px + .4vh);
+  font-weight: 600;
+  text-align: center;
+
+}
+
+.diagonal-label {
+  display: flex;
+  flex-direction: column;
+  width: 12vw;
+}
+
+.label h2 {
+  font-size: calc(16px + .2vh);
 }
 
 .trust-by {
@@ -151,6 +169,16 @@
     transform: translate(-50%, -50%);
   }
 
+  .linkHover {
+    position: relative;
+    float: right;
+    width: 48px;
+    border-top: 4px solid #272727;
+    right: -68px;
+    bottom: -50px;
+    transition: .5s;
+  }
+
   .icon-box i {
     font-size: calc(16px + 1vw);
     color: #000000;
@@ -176,6 +204,20 @@
     background-position: right;
     background-size: 3px 20px;
     background-repeat: repeat-y;
+  }
+
+  .blue {
+    background-color: #4F69F3;
+  }
+
+  .diagonal-container {
+    width: 80%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .home-img {

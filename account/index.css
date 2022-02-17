@@ -1,0 +1,77 @@
+.center {
+  display: flex;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 16vh;
+}
+
+.box {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 27%;
+  width: 40%;
+  height: 100px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  margin-bottom: 80px;
+}
+
+.box:hover {
+  background-color: #EEEEEE;
+}
+
+.alignVO {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.far, .fas, .fa-solid {
+  font-size: 34px;
+  margin-left: 20px;
+  color: #000000;
+}
+
+.fa-user-group {
+  font-size: 26px;
+  color: #002c8a;
+  margin-top: 4px;
+}
+
+.fa-id-badge, .fa-calendar-check {
+  color: #002c8a;
+}
+
+.fa-certificate {
+  color: #D78F00;
+}
+
+.fa-sign-out-alt {
+  color: #B30602;
+}
+
+.col-30 {
+  width: 14%;
+  float: left;
+}
+
+.col-70 {
+  width: 70%;
+  float: left;
+}
+
+
+.center a {
+  display: contents;
+}
+
+.col-70 h4 {
+  margin-top: 0.5vh;
+  color: #000000;
+  font-weight: 600;
+}
