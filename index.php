@@ -182,14 +182,8 @@
         success: function(data){
           var array = JSON.parse(data);
           console.log(array);
-          console.log(array[1]);
           if (array[0] == array[1]){
             window.location.href = "/room/?id=" + roomId;
-          }
-          else if (array[1] == 404) {
-            window.location.href = "/login/";
-            console.log('ciao');
-
           }
 
           else {
