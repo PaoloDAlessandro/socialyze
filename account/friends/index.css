@@ -14,7 +14,7 @@
 }
 
 .friend-row:first-child {
-  
+
 }
 
 .friend-info, .friend-interest, .friend-status {
@@ -83,6 +83,28 @@
 
 .friend-status p {
   font-size: calc(12px + .2vw);
+}
+
+.search-box {
+  width: 25%;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  border-radius: 6px;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+.search-box input {
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  outline: none;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 8px 10px;
+  color: #414141;
 }
 
 .fa-trash-can:hover {

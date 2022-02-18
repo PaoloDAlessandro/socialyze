@@ -55,6 +55,10 @@
       </nav>
     </header>
 
+    <div class="search-box">
+      <input type="text" name="" value="" placeholder="Inserisci l'username" oninput="search(this)">
+    </div>
+
     <div class="friends-container">
       <div class="friend-row">
         <div class="friend-info">
@@ -188,6 +192,14 @@
 
     </div>
 
+    <script>
+      function search(input) {
+        $.ajax() {
+
+        }
+      }
+
+    </script>
 
   </body>
 </html>
