@@ -66,6 +66,9 @@ nav a:hover {
   margin-top: 3px;
 }
 
+/*DEPRECATE NAV HOVER STYLE*/
+
+/*
 .navHoverEffect {
   margin-left: auto;
   margin-right: auto;
@@ -76,13 +79,13 @@ nav a:hover {
 
 nav a:hover ~ .navHoverEffect {
   border-bottom: 2.6px solid #212121;
-
 }
 
 .navHoverEffect:hover {
   border-bottom: 3px solid #212121;
 }
 
+*/
 .logo {
   width: fit-content;
 }
@@ -97,10 +100,10 @@ nav a:hover ~ .navHoverEffect {
 .main {
   display: flex;
   margin-top: 60px;
-  width: 90%;
+  width: 96%;
   margin-left: auto;
   margin-right: auto;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -114,18 +117,14 @@ nav a:hover ~ .navHoverEffect {
 .card {
   width: 20%;
   min-width: 320px;
-  height: 420px;
+  height: auto;
   border: 1px solid rgba(221, 221, 221, 0.6);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 12px;
-  margin: 0 30px;
+  box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+  margin: 0 14px;
   margin-bottom: 60px;
+  padding-bottom: 4vh;
   background-color: white !important;
-  transition: .4s;
-}
-
-.card:hover {
-  box-shadow: rgb(0 0 0 / 10%) 0px 6px 16px;
 }
 
 .card-button {
@@ -274,7 +273,7 @@ nav a:hover ~ .navHoverEffect {
 
 .icon i {
   position: absolute;
-  font-size: 22px;
+  font-size: 28px;
   color: white;
   top: 50%;
   left: 50%;
@@ -291,6 +290,9 @@ header h2 {
   color: #002C8A;
 }
 
+#Math {
+  background-color: #ffb703;
+}
 
 #almostfull {
   color: #ffb703
@@ -298,10 +300,6 @@ header h2 {
 
 #full {
   color: #ff002b;
-}
-
-#Math {
-  background-color: #ffb703;
 }
 
 #Politics {

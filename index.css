@@ -100,10 +100,10 @@ nav a:hover ~ .navHoverEffect {
 .main {
   display: flex;
   margin-top: 60px;
-  width: 90%;
+  width: 96%;
   margin-left: auto;
   margin-right: auto;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -117,12 +117,13 @@ nav a:hover ~ .navHoverEffect {
 .card {
   width: 20%;
   min-width: 320px;
-  height: 420px;
+  height: auto;
   border: 1px solid rgba(221, 221, 221, 0.6);
   border-radius: 12px;
   box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
-  margin: 0 30px;
+  margin: 0 14px;
   margin-bottom: 60px;
+  padding-bottom: 4vh;
   background-color: white !important;
 }
 

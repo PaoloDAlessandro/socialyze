@@ -126,13 +126,15 @@
                     </div>";
 
                     $c++;
+                    /*
                     if ($c == 4){
                       $c = 0;
-                      echo "</div>";
                       echo "<div class = 'card-row'>";
 
                     }
+                    */
         }
+        echo "</div>";
        ?>
     </section>
 
