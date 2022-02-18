@@ -194,9 +194,16 @@
 
     <script>
       function search(input) {
-        $.ajax() {
-
-        }
+        $.ajax({
+          type: 'GET',
+          url: 'searchUsers.php',
+          data: {username: input.value},
+          success: function(content){
+            console.log(content);
+            var result = JSON.parse(content);
+            console.log(result);
+          }
+        })
       }
 
     </script>
