@@ -25,6 +25,16 @@
   float: left;
 }
 
+.friends-result {
+  height: 400px;
+  width: 25%;
+  background-color: #FFFFFF;
+  position: fixed;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px, rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
 .friend-info {
   display: flex;
   align-items: center;
@@ -105,6 +115,11 @@
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   padding: 8px 10px;
   color: #414141;
+}
+
+.search-box input:focus {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .fa-trash-can:hover {

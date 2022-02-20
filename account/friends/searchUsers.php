@@ -6,8 +6,7 @@
   $result = $con->query($sql);
   $array[] = array();
   while($row = mysqli_fetch_assoc($result)){
-        $array["username"] = $row['username'];
-        $array["avatar_username"] = $row['avatar_name'];
+      array_push($array,array($row['username'], $row['avatar_name']));
   }
 
   echo json_encode($array);

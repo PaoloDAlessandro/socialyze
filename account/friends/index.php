@@ -57,6 +57,9 @@
 
     <div class="search-box">
       <input type="text" name="" value="" placeholder="Inserisci l'username" oninput="search(this)">
+      <div class="friends-result">
+
+      </div>
     </div>
 
     <div class="friends-container">
@@ -199,9 +202,9 @@
           url: 'searchUsers.php',
           data: {username: input.value},
           success: function(content){
-            console.log(content);
             var result = JSON.parse(content);
             console.log(result);
+            console.log(result[1][0]);
           }
         })
       }
