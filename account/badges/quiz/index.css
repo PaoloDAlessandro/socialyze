@@ -1,0 +1,191 @@
+body {
+  background-color: #f5f5f5;
+}
+
+.quiz-container {
+  position: relative;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  height: 600px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.intro-text {
+  width: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.question-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.question-center h2 {
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.intro-text h2 {
+  font-size: 28px;
+  color: #212121;
+  text-align: center;
+  margin-bottom: 3vh;
+}
+
+.quiz-material {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  padding-top: 7vh;
+}
+
+.question {
+  position: relative;
+  height: 60px;
+  padding-left: 10px;
+  border-radius: 2px;
+  background-color: #002c8a;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;}
+
+.answers {
+}
+
+.answers li {
+  padding: 20px 10px;
+  list-style: none;
+  transition: .2s;
+  border-radius: 2px;
+}
+
+.answers li:hover {
+  background-color: #F5F5F5;
+  cursor: pointer;
+}
+
+.answers input[type='radio'] {
+  margin-right: 10px;
+}
+
+
+.fixed {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.fixed-next {
+  position: absolute;
+  bottom: 4vh;
+  right: 7vw;
+}
+
+.fixed-timer {
+  position: absolute;
+  bottom: 4vh;
+  left: 7vw;
+}
+
+.fixed-timer p {
+  display: none;
+  color: #111111;
+  padding: 8px 22px;
+
+}
+
+.fixed-next p {
+  display: none;
+  background-color: #002C8A;
+  color: #FFFFFF;
+  padding: 8px 22px;
+  border-radius: 2px;
+}
+
+.fixed-next p:hover {
+  cursor: pointer;
+}
+
+.skip-text {
+  text-align: right;
+  margin-right: 60px;
+  margin-bottom: 30px;
+  color: #414141;
+}
+
+.skip-text:hover {
+  cursor: pointer;
+  color: #212121;
+}
+
+#exit_btn {
+  text-align: center;
+  background-color: #002C8A;
+  color: #FFFFFF;
+  padding: 8px 22px;
+  border-radius: 2px;
+  text-decoration: none;
+  margin-top: 2vh;
+}
+
+#exit_btn:hover {
+  cursor: pointer;
+}
+
+#outro_text_no_margin {
+  margin-bottom: 1vh;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-zoom {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(2.6);
+  }
+}
+
+@keyframes fade-out-zoom {
+  0% {
+    opacity: 1;
+    transform: scale(2.6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
