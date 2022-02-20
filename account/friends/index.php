@@ -56,8 +56,8 @@
     </header>
 
     <div class="search-box">
-      <input type="text" name="" value="" placeholder="Inserisci l'username" oninput="search(this)">
-      <div class="friends-result">
+      <input type="text" name="" id="input-username" value="" placeholder="Inserisci l'username" oninput="search(this)">
+      <div class="friends-result" id="friends-results">
 
       </div>
     </div>
@@ -196,6 +196,10 @@
     </div>
 
     <script>
+
+      var c = 0;
+      const friends_result = document.getElementById('friends-results');
+      const input_username = document.getElementById('input-username');
       function search(input) {
         $.ajax({
           type: 'GET',
@@ -203,10 +207,40 @@
           data: {username: input.value},
           success: function(content){
             var result = JSON.parse(content);
-            console.log(result);
-            console.log(result[1][0]);
+            for (let i = 1; i < result.length; i++) {
+              addUserToList(result[i][1], result[i][0]);
+              removeUserToList(result);
+            }
           }
         })
+      }
+
+      function addUserToList(avatar, username) {
+        friends_result.insertAdjacentHTML('beforeend', "<p class = 'user_research' id = '" + username +"'>" + username +"</p>");
+      }
+
+      function removeUserToList(users) {
+        let usersList = document.getElementsByClassName('user_research');
+        let checker = 0;
+        let position = 0;
+        if (input_username.value == "") {
+          for (let x = 0; x < usersList.length; x++) {
+            usersList[x].remove();
+          }
+        }
+
+        for (let x = 0; x < usersList.length; x++){
+          for (let y = 0; y < users.length; y++){
+            if (usersList[x].id == users[y][0]){
+              checker = 1;
+              position = x;
+            }
+          }
+          if (checker == 0){
+            usersList[position].remove();
+          }
+        }
+
       }
 
     </script>

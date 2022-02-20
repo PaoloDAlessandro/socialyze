@@ -74,4 +74,5 @@
   margin-top: 0.5vh;
   color: #000000;
   font-weight: 600;
+  margin-left: calc(8px + .2vw);
 }

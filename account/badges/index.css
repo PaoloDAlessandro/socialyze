@@ -96,7 +96,7 @@
 }
 
 .category-box p {
-  font-size: 13px;
+  font-size: calc(8px + .2vw);
   font-weight: 600;
   position: absolute;
   top: 72%;
