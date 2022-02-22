@@ -10,7 +10,7 @@
     <title>Home</title>
   </head>
   <body>
-    <?php include '../../../config.php';session_start();?>
+    <?php include '../../../config.php'; include '../../checkLogin.php';?>
     <header>
       <div class="logo">
         <img src="/logo/logo2.png" alt="logo">
@@ -100,7 +100,7 @@
       $.ajax({
         type: 'POST',
         url: 'checkAttempts.php',
-        data: {user: '<?php echo $username;?>', category: category},
+        data: {user: '', category: category},
         success: function(data){
         }
       });
@@ -118,7 +118,7 @@
         $row = mysqli_fetch_assoc($result);
         $count = $row['count'];
        ?>
-
+      const id_user = '<?php echo $id_user;?>';
       const query = window.location.search;
       const urlParams = new URLSearchParams(query);
       const category = urlParams.get('category');
@@ -130,9 +130,11 @@
       next_btn = document.getElementById('next');
       timer = document.getElementById('timer');
       skip = document.getElementById('skip');
-      const attempts = <?php echo $count; ?>
+      const attempts = <?php echo $count; ?>;
+      const badge = checkBadge();
+      console.log(badge);
       //checkAttempts();
-      if (attempts <= 1) {
+      if (attempts <= 1 && badge == 0) {
       window.addEventListener('DOMContentLoaded', (event) => {
         t1.style.animation = 'fade-in 1s forwards';
         setTimeout(function() {
@@ -420,23 +422,24 @@
           intro_outro_text_div.appendChild(t2);
           intro_outro_text_div.appendChild(end_btn);
       }
-      else {
-        outcome.innerHTML = "Non hai superato il test :(";
-        t2.innerHTML = "Hai risposto correttamente all'" + ratio + '% delle domande';
-        outcome.id = 'outro_text_no_margin';
-        end_btn.innerHTML = "Quit";
-        end_btn.href = "/account/badges/";
-        end_btn.id = "exit_btn";
-        quiz_material.remove();
-        next_btn.remove();
-        timer.remove();
-        intro_outro_text_div.appendChild(outcome);
-        intro_outro_text_div.appendChild(t2);
-        intro_outro_text_div.appendChild(end_btn);
-      }
+        else {
+          outcome.innerHTML = "Non hai superato il test :(";
+          t2.innerHTML = "Hai risposto correttamente all'" + ratio + '% delle domande';
+          outcome.id = 'outro_text_no_margin';
+          end_btn.innerHTML = "Quit";
+          end_btn.href = "/account/badges/";
+          end_btn.id = "exit_btn";
+          quiz_material.remove();
+          next_btn.remove();
+          timer.remove();
+          intro_outro_text_div.appendChild(outcome);
+          intro_outro_text_div.appendChild(t2);
+          intro_outro_text_div.appendChild(end_btn);
+        }
       }
     }
-    else {
+
+    else if (attempts > 1 && badge == 0){
       t1.innerHTML = "Hai superato il numero massimo di tentativi per questo quiz";
       const end_btn = document.createElement('A');
       end_btn.innerHTML = "Quit";
@@ -444,7 +447,34 @@
       end_btn.id = "exit_btn";
       skip.remove();
       intro_outro_text_div.appendChild(end_btn);
+    }
 
+    else if (attempts > 1 && badge == 1){
+      badgeAlreadyGained();
+    }
+
+
+    function badgeAlreadyGained() {
+      t1.innerHTML = "Possiedi già il massimo livello di badge";
+      const end_btn = document.createElement('A');
+      end_btn.innerHTML = "Quit";
+      end_btn.href = "/account/badges/";
+      end_btn.id = "exit_btn";
+      skip.remove();
+      intro_outro_text_div.appendChild(end_btn);
+    }
+
+    function checkBadge() {
+      $.ajax({
+        type: 'POST',
+        url: 'checkBadge.php',
+        data: {id_user: id_user, category: category},
+        success: function(data){
+          if(data > 0) {
+            return data;
+          }
+        }
+      })
     }
 
 

@@ -9,7 +9,7 @@
     <title>Home</title>
   </head>
   <body>
-    <?php include '../../config.php';session_start();?>
+    <?php include '../../config.php'; include '../checkLogin.php';?>
     <header>
       <div class="logo">
         <img src="/logo/logo2.png" alt="logo">
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="navABorder">
-          <a href="#">Rooms</a>
+          <a href="/index/">Rooms</a>
           <div class="navHoverEffect">
           </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="navABorder">
           <div class="avatar-container">
 
-          <a href="/account/info?id=<?php $username = $_SESSION['username']; $sql = "SELECT `id` FROM `users` WHERE `username` = '$username'"; $result = $con->query($sql);if($result->num_rows != 0){$row = mysqli_fetch_assoc($result); echo $row['id'];} ?>"><img src="/avatar/paolodalex.jpeg" class="avatar" alt=""></a>
+          <a href="/account/"><img src="/avatar/paolodalex.jpeg" class="avatar" alt=""></a>
         </div>
         </div>
       <?php }else{?>

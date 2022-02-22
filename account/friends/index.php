@@ -11,7 +11,7 @@
     <title>Home</title>
   </head>
   <body>
-    <?php include '../../config.php';session_start();?>
+    <?php include '../../config.php'; include '../checkLogin.php';?>
     <header>
       <div class="logo">
         <img src="/logo/logo2.png" alt="logo">
