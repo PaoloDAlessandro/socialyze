@@ -80,7 +80,7 @@
     <div class="box">
       <div class="alignVO">
         <div class="col-30">
-          <i class="far fa-calendar-check"></i>
+          <i class="fa-solid fa-medal"></i>
         </div>
         <div class="col-70">
           <h4>&nbsp;	 Badges</h4>

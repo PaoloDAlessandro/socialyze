@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="/logo/logo2.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9d05a115fd.js" crossorigin="anonymous"></script>
     <title>Home</title>
   </head>
   <body>
