@@ -200,48 +200,64 @@
       var c = 0;
       const friends_result = document.getElementById('friends-results');
       const input_username = document.getElementById('input-username');
+      var usersArray = [];
       function search(input) {
+        if (input.value == ""){
+
+        }
+
+        else {
+
         $.ajax({
           type: 'GET',
           url: 'searchUsers.php',
           data: {username: input.value},
           success: function(content){
             var result = JSON.parse(content);
-            for (let i = 1; i < result.length; i++) {
-              addUserToList(result[i][1], result[i][0]);
+            console.log(result);
+              addUserToList(result);
               removeUserToList(result);
-            }
           }
         })
       }
+      }
 
-      function addUserToList(avatar, username) {
-        friends_result.insertAdjacentHTML('beforeend', "<p class = 'user_research' id = '" + username +"'>" + username +"</p>");
+      function addUserToList(users) {
+        let usersList = document.getElementsByClassName('user_research');
+        let check = 0;
+
+
+        for(let x = 1; x < users.length; x++){
+          if (!usersArray.includes(users[x][0])) {
+            friends_result.insertAdjacentHTML('beforeend', "<p class = 'user_research' id = '" + users[x][0] +"'>" + users[x][0] +"</p>");
+
+          }
+        }
+        console.log(usersArray);
+        for(let x = 1; x < users.length; x++){
+          usersArray.push(users[x][0]);
+        }
       }
 
       function removeUserToList(users) {
         let usersList = document.getElementsByClassName('user_research');
-        let checker = 0;
-        let position = 0;
-        if (input_username.value == "") {
-          for (let x = 0; x < usersList.length; x++) {
-            usersList[x].remove();
-          }
-        }
+        let check = 0;
 
-        for (let x = 0; x < usersList.length; x++){
-          for (let y = 0; y < users.length; y++){
-            if (usersList[x].id == users[y][0]){
-              checker = 1;
-              position = x;
+        for (let x = 0; x < usersArray.length; x++) {
+          check = 0
+          for (let y = 1; y < users.length; y++) {
+            if(usersArray[x] == users[y][0]){
+              check = 1;
             }
           }
-          if (checker == 0){
-            usersList[position].remove();
+          if (check == 0){
+            document.getElementById(usersArray[x]).remove();
+            usersArray.indexOf(x);
           }
         }
-
       }
+
+
 
     </script>
 

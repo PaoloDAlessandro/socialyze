@@ -117,6 +117,7 @@ nav a:hover ~ .navHoverEffect {
 .card {
   width: 20%;
   min-width: 320px;
+  max-width: 340px;
   height: auto;
   border: 1px solid rgba(221, 221, 221, 0.6);
   border-radius: 12px;
