@@ -118,6 +118,23 @@
         $row = mysqli_fetch_assoc($result);
         $count = $row['count'];
        ?>
+
+       <?php
+         $category = $_GET['category'];
+         $badge = 0;
+         $sql = "SELECT COUNT(id) AS counter FROM badges WHERE id_user = '$id_user' AND category = '$category' GROUP BY lvl";
+         $result = $con->query($sql);
+         if ($result->num_rows != 0) {
+           $row = mysqli_fetch_assoc($result);
+           $badge = $row['counter'];
+         }
+
+        ?>
+
+
+
+
+
       const id_user = '<?php echo $id_user;?>';
       const query = window.location.search;
       const urlParams = new URLSearchParams(query);
@@ -131,8 +148,7 @@
       timer = document.getElementById('timer');
       skip = document.getElementById('skip');
       const attempts = <?php echo $count; ?>;
-      const badge = checkBadge();
-      console.log(badge);
+      const badge = <?php echo $badge; ?>;
       //checkAttempts();
       if (attempts <= 1 && badge == 0) {
       window.addEventListener('DOMContentLoaded', (event) => {
@@ -449,9 +465,11 @@
       intro_outro_text_div.appendChild(end_btn);
     }
 
-    else if (attempts > 1 && badge == 1){
+    else if (attempts > 1 && badge >= 1){
       badgeAlreadyGained();
     }
+
+    console.log(badge);
 
 
     function badgeAlreadyGained() {
@@ -464,17 +482,23 @@
       intro_outro_text_div.appendChild(end_btn);
     }
 
+    console.log(id_user);
+    console.log(category);
+
     function checkBadge() {
+      var resultBadge = '';
       $.ajax({
         type: 'POST',
         url: 'checkBadge.php',
         data: {id_user: id_user, category: category},
         success: function(data){
-          if(data > 0) {
-            return data;
-          }
+            returnCheckBadge(data);
         }
-      })
+      });
+    }
+
+    function returnCheckBadge(badgeResult) {
+      return badgeResult;
     }
 
 

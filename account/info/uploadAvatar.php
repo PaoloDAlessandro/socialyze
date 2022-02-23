@@ -2,7 +2,7 @@
   include "../../config.php";
   session_start();
   $username = $_SESSION['username'];
-  $target_dir = "C:/xampp/htdocs/avatar/";
+  $target_dir = "C:/Users/PaoloD'Alessandro/github/socialyze/avatar/";
   $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
