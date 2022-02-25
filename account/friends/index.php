@@ -215,32 +215,42 @@
         })
       }
 
-      function addUserToList(avatar, username) {
-        friends_result.insertAdjacentHTML('beforeend', "<p class = 'user_research' id = '" + username +"'>" + username +"</p>");
+      async function addUserToList(avatar, username) {
+        let usersList = document.getElementsByClassName('user_research');
+        let check = 0;
+        for (var i = 0; i < usersList.length; i++){
+          if(usersList[i].id == username) {
+            check = check + 1;
+          }
+        }
+        if (check == 0) {
+          friends_result.insertAdjacentHTML('beforeend', "<p class = 'user_research' id = '" + username +"'>" + username +"</p>");
+        }
+
       }
 
-      function removeUserToList(users) {
+      async function removeUserToList(users) {
         let usersList = document.getElementsByClassName('user_research');
         let checker = 0;
         let position = 0;
         if (input_username.value == "") {
-          for (let x = 0; x < usersList.length; x++) {
+          let x = 0;
+          while(usersList.length >= 0) {
             usersList[x].remove();
+            x++;
           }
         }
 
-        for (let x = 0; x < usersList.length; x++){
-          for (let y = 0; y < users.length; y++){
-            if (usersList[x].id == users[y][0]){
-              checker = 1;
-              position = x;
+        else {
+          for (let x = 0; x < users.length; x++) {
+            for(let y = 0; y < usersList.length; y++) {
+              if (users[x][1] == usersList[y]){
+                console.log(users[x][1]);
+                console.log(usersList[y]);
+              }
             }
           }
-          if (checker == 0){
-            usersList[position].remove();
-          }
         }
-
       }
 
     </script>
