@@ -289,35 +289,6 @@
           }
         })
       }
-<<<<<<< HEAD
-
-      async function addUserToList(avatar, username) {
-        let usersList = document.getElementsByClassName('user_research');
-        let check = 0;
-        for (var i = 0; i < usersList.length; i++){
-          if(usersList[i].id == username) {
-            check = check + 1;
-          }
-        }
-        if (check == 0) {
-          friends_result.insertAdjacentHTML('beforeend', "<p class = 'user_research' id = '" + username +"'>" + username +"</p>");
-        }
-
-      }
-
-      async function removeUserToList(users) {
-        let usersList = document.getElementsByClassName('user_research');
-        let checker = 0;
-        let position = 0;
-        if (input_username.value == "") {
-          let x = 0;
-          while(usersList.length >= 0) {
-            usersList[x].remove();
-            x++;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 9e290eb03fcf22ac638288866bc2b2375df3eb75
       }
 
       function addUserToList(users) {
@@ -329,10 +300,6 @@
           if (!usersArray.includes(users[x][0])) {
             friends_result.insertAdjacentHTML('beforeend', "<div class = 'friend-single-result'><div class = 'friend-single-result-center'><div class = 'friend-single-result-img'><img src = '/avatar/" + users[x][1] + "' alt = ''></div> <div class = 'friend-single-result-username'><p>" + users[x][0] + "</p></div><div class = 'friend-single-result-link'><a href = '#' onclick = 'sendFriendRequest(this," + users[x][2] +");'>add friend</a></div></div></div>");
 
-<<<<<<< HEAD
-=======
->>>>>>> f3057a743d1b8fa39b144a9ddc152ab193627d64
->>>>>>> 9e290eb03fcf22ac638288866bc2b2375df3eb75
           }
         }
         for(let x = 1; x < users.length; x++){
@@ -340,21 +307,6 @@
         }
       }
 
-<<<<<<< HEAD
-        else {
-          for (let x = 0; x < users.length; x++) {
-            for(let y = 0; y < usersList.length; y++) {
-              if (users[x][1] == usersList[y]){
-                console.log(users[x][1]);
-                console.log(usersList[y]);
-              }
-            }
-          }
-        }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 9e290eb03fcf22ac638288866bc2b2375df3eb75
       function removeUserToList(users) {
         let usersList = document.getElementsByClassName('user_research');
         let check = 0;
@@ -389,10 +341,6 @@
             }
           }
         })
-<<<<<<< HEAD
-=======
->>>>>>> f3057a743d1b8fa39b144a9ddc152ab193627d64
->>>>>>> 9e290eb03fcf22ac638288866bc2b2375df3eb75
       }
 
 
