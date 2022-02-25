@@ -3,7 +3,7 @@
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  height: 80vh;
+  height: auto;
 }
 
 .friend-row {
@@ -27,7 +27,7 @@
 
 .friends-result {
   display: none;
-  height: 400px;
+  height: auto;
   width: 25%;
   background-color: #FFFFFF;
   position: absolute;
@@ -151,10 +151,16 @@
 
 
 .friend-single-result-username {
-  width: 58%;
+  width: fit-content;
   float: left;
   margin-left: 14px;
   margin-top: 9px;
+}
+
+.friend-single-result-link-inner {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .friend-single-result-username {
@@ -162,7 +168,7 @@
 }
 
 .friend-single-result-link {
-  float: left;
+  float: right;
   width: auto;
   margin-top: 8px;
 }
@@ -174,6 +180,7 @@
   font-size: 12px;
   border-radius: 14px;
   padding: 2px 14px;
+  margin-right: 2vw;
 }
 
 .friend-single-result-img img {
@@ -182,8 +189,9 @@
   aspect-ratio: 1 / 1;
 }
 
-  .fa-check {
-    transition: .1s;
+.fa-check {
+  color: #000000;
+  transition: .1s;
   }
 
 .fa-check:hover {

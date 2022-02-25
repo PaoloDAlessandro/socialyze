@@ -65,7 +65,7 @@
 
     <div class="friends-container">
       <?php
-        $sql = "SELECT id_user_sender FROM friend_requests WHERE id_user_receiver = $id_user";
+        $sql = "SELECT id_user_sender, id FROM friend_requests WHERE id_user_receiver = $id_user";
         $result = $con->query($sql);
         if (mysqli_num_rows($result) != 0) {
           while($row = mysqli_fetch_assoc($result)) {
@@ -92,10 +92,10 @@
 
                   <div class='friend-status'>
 
-                    <a href = #>
+                    <a href = acceptRequest.php?id_request={$row['id']}>
                     <i class='fa-solid fa-check'></i>
                     </a>
-                    <a href='#'>
+                    <a href='discardRequest.php?id_request={$row['id']}'>
                       <i class='fa-solid fa-trash-can request'></i>
                     </a>
                   </div>
@@ -298,7 +298,7 @@
 
         for(let x = 1; x < users.length; x++){
           if (!usersArray.includes(users[x][0])) {
-            friends_result.insertAdjacentHTML('beforeend', "<div class = 'friend-single-result'><div class = 'friend-single-result-center'><div class = 'friend-single-result-img'><img src = '/avatar/" + users[x][1] + "' alt = ''></div> <div class = 'friend-single-result-username'><p>" + users[x][0] + "</p></div><div class = 'friend-single-result-link'><a href = '#' onclick = 'sendFriendRequest(this," + users[x][2] +");'>add friend</a></div></div></div>");
+            friends_result.insertAdjacentHTML('beforeend', "<div class = 'friend-single-result' id = " + users[x][0] + "><div class = 'friend-single-result-center'><div class = 'friend-single-result-img'><img src = '/avatar/" + users[x][1] + "' alt = ''></div> <div class = 'friend-single-result-username'><p>" + users[x][0] + "</p></div><div class = 'friend-single-result-link'><div class = 'friend-single-result-link-inner'><a href = '#' onclick = 'sendFriendRequest(this," + users[x][2] +");'>add friend</a></div></div></div></div>");
 
           }
         }
@@ -308,18 +308,27 @@
       }
 
       function removeUserToList(users) {
-        let usersList = document.getElementsByClassName('user_research');
-        let check = 0;
-        for (let x = 0; x < usersArray.length; x++) {
-          check = 0
-          for (let y = 1; y < users.length; y++) {
-            if(usersArray[x] == users[y][0]){
+        let usersList = document.getElementsByClassName('friend-single-result');
+        var userListId = [''];
+        for (let i = 1; i < usersList.length; i++) {
+          if (!userListId.includes(usersList[i]).id) {
+            userListId.push(usersList[i].id);
+          }
+        }
+
+        var check = 0;
+        console.log(userListId);
+        for(let y = 1; y < userListId.length; y++){
+          for(let x = 1; x < users.length; x++){
+            console.log(userListId[y]);
+            console.log(users[x][0]);
+            if(users[x][0] === userListId[y]){
               check = 1;
+              console.log(check);
             }
           }
           if (check == 0){
-            document.getElementById(usersArray[x]).remove();
-            usersArray.indexOf(x);
+            document.getElementById(userListId[y]).remove();
           }
         }
       }
@@ -336,7 +345,7 @@
             }
 
             if (content == 'error') {
-              button.innerHTML = 'already sended';
+              button.innerHTML = 'pending';
               button.style.backgroundColor = '#d62828';
             }
           }
