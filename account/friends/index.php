@@ -65,7 +65,7 @@
 
     <div class="friends-container">
       <?php
-        $sql = "SELECT id_user_sender, id FROM friend_requests WHERE id_user_receiver = $id_user";
+        $sql = "SELECT id_user_sender, id FROM friend_requests WHERE id_user_receiver = $id_user AND status = 0";
         $result = $con->query($sql);
         if (mysqli_num_rows($result) != 0) {
           while($row = mysqli_fetch_assoc($result)) {
@@ -73,14 +73,14 @@
             $sql = "SELECT * FROM users WHERE id = '$id_user_sender'";
             $sub_result = $con->query($sql);
             if(mysqli_num_rows($sub_result) != 0) {
-              while($row = mysqli_fetch_assoc($sub_result)) {
+              while($sub_row = mysqli_fetch_assoc($sub_result)) {
                 echo "<div class='friend-row'>
                   <div class='friend-info'>
                     <div class='friend-info-img'>
-                      <img src='/avatar/{$row['avatar_name']}' alt=''>
+                      <img src='/avatar/{$sub_row['avatar_name']}' alt=''>
                     </div>
                     <div class='friend-info-username'>
-                      <h2>{$row['username']}</h2>
+                      <h2>{$sub_row['username']}</h2>
                     </div>
                   </div>
 
@@ -92,12 +92,12 @@
 
                   <div class='friend-status'>
 
-                    <a href = acceptRequest.php?id_request={$row['id']}>
+                    <p onclick = acceptRequest({$row['id']});>
                     <i class='fa-solid fa-check'></i>
-                    </a>
-                    <a href='discardRequest.php?id_request={$row['id']}'>
+                    </p>
+                    <p onclick = denyRequest({$row['id']});>
                       <i class='fa-solid fa-trash-can request'></i>
-                    </a>
+                    </p>
                   </div>
                 </div>";
               }
@@ -112,6 +112,41 @@
     </div>
 
     <div class="friends-container">
+
+      <?php
+        $sql = "SELECT users.username, users.avatar_name FROM users INNER JOIN friend_requests ON users.id = $id_user WHERE friend_requests.status = 1";
+        $result = $con->query($sql);
+        if (mysqli_num_rows($result) != 0){
+          while($row = mysqli_fetch_assoc($result)) {
+            echo "<div class='friend-row'>
+              <div class='friend-info'>
+                <div class='friend-info-img'>
+                  <img src='/avatar/{$row['avatar_name']}' alt=''>
+                </div>
+                <div class='friend-info-username'>
+                  <h2>{$row['username']}</h2>
+                </div>
+              </div>
+
+              <div class='friend-interest'>
+                <p id='Coding'>coding</p>
+                <p id='Marketing'>Marketing</p>
+                <p id='Math'>Math</p>
+              </div>
+
+              <div class='friend-status'>
+
+              <div class='status-circle'>
+              </div>
+              <p>Online</p>
+              <a href='#'>
+                <i class='fa-solid fa-trash-can'></i>
+              </a>
+              </div>
+            </div>";
+          }
+        }
+       ?>
       <div class="friend-row">
         <div class="friend-info">
           <div class="friend-info-img">
@@ -346,7 +381,41 @@
 
             if (content == 'error') {
               button.innerHTML = 'pending';
-              button.style.backgroundColor = '#d62828';
+              button.style.backgroundColor = '#FFB703';
+            }
+          }
+        })
+      }
+
+      function acceptRequest(id_request){
+        $.ajax({
+          type: 'GET',
+          url: 'acceptRequest.php',
+          data: {id_request: id_request},
+          success: function(content){
+            if (content == 'done') {
+              console.log('request accepted');
+            }
+
+            if (content == 'error') {
+              console.log('request denied');
+            }
+          }
+        })
+      }
+
+      function denyRequest(id_request){
+        $.ajax({
+          type: 'GET',
+          url: 'denyRequest.php',
+          data: {id_request: id_request},
+          success: function(content){
+            if (content == 'done') {
+              console.log('success');
+            }
+
+            if (content == 'error') {
+              console.log('error');
             }
           }
         })
