@@ -114,7 +114,7 @@
     <div class="friends-container">
 
       <?php
-        $sql = "SELECT users.username, users.avatar_name FROM users INNER JOIN friend_requests ON users.id = $id_user WHERE friend_requests.status = 1";
+        $sql = "SELECT users.username, users.avatar_name FROM users WHERE users.id IN (SELECT IF(friend_requests.id_user_sender = 7, friend_requests.id_user_receiver, friend_requests.id_user_sender) FROM friend_requests WHERE (friend_requests.id_user_sender = 7 OR friend_requests.id_user_receiver = 7) AND friend_requests.status = 1)";
         $result = $con->query($sql);
         if (mysqli_num_rows($result) != 0){
           while($row = mysqli_fetch_assoc($result)) {
@@ -147,135 +147,6 @@
           }
         }
        ?>
-      <div class="friend-row">
-        <div class="friend-info">
-          <div class="friend-info-img">
-            <img src="/avatar/default.png" alt="">
-          </div>
-          <div class="friend-info-username">
-            <h2>Paolo D'Alessandro</h2>
-          </div>
-        </div>
-
-        <div class="friend-interest">
-          <p id="Coding">coding</p>
-          <p id="Marketing">Marketing</p>
-          <p id="Math">Math</p>
-        </div>
-
-        <div class="friend-status">
-          <div class="status-circle">
-          </div>
-          <p>Online</p>
-          <a href="#">
-            <i class="fa-solid fa-trash-can"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="friend-row">
-        <div class="friend-info">
-          <div class="friend-info-img">
-            <img src="/avatar/default.png" alt="">
-          </div>
-          <div class="friend-info-username">
-            <h2>Paolo D'Alessandro</h2>
-          </div>
-        </div>
-
-        <div class="friend-interest">
-          <p id="Coding">coding</p>
-          <p id="Marketing">Marketing</p>
-          <p id="Math">Math</p>
-        </div>
-
-        <div class="friend-status">
-          <div class="status-circle">
-          </div>
-          <p>Online</p>
-          <a href="#">
-            <i class="fa-solid fa-trash-can"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="friend-row">
-        <div class="friend-info">
-          <div class="friend-info-img">
-            <img src="/avatar/default.png" alt="">
-          </div>
-          <div class="friend-info-username">
-            <h2>Paolo D'Alessandro</h2>
-          </div>
-        </div>
-
-        <div class="friend-interest">
-          <p id="Coding">coding</p>
-          <p id="Marketing">Marketing</p>
-          <p id="Math">Math</p>
-        </div>
-
-        <div class="friend-status">
-          <div class="status-circle">
-          </div>
-          <p>Online</p>
-          <a href="#">
-            <i class="fa-solid fa-trash-can"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="friend-row">
-        <div class="friend-info">
-          <div class="friend-info-img">
-            <img src="/avatar/default.png" alt="">
-          </div>
-          <div class="friend-info-username">
-            <h2>Paolo D'Alessandro</h2>
-          </div>
-        </div>
-
-        <div class="friend-interest">
-          <p id="Coding">coding</p>
-          <p id="Marketing">Marketing</p>
-          <p id="Math">Math</p>
-        </div>
-
-        <div class="friend-status">
-          <div class="status-circle">
-          </div>
-          <p>Online</p>
-          <a href="#">
-            <i class="fa-solid fa-trash-can"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="friend-row">
-        <div class="friend-info">
-          <div class="friend-info-img">
-            <img src="/avatar/default.png" alt="">
-          </div>
-          <div class="friend-info-username">
-            <h2>Paolo D'Alessandro</h2>
-          </div>
-        </div>
-
-        <div class="friend-interest">
-          <p id="Coding">coding</p>
-          <p id="Marketing">Marketing</p>
-          <p id="Math">Math</p>
-        </div>
-
-        <div class="friend-status">
-          <div class="status-circle">
-          </div>
-          <p>Online</p>
-          <a href="#">
-            <i class="fa-solid fa-trash-can"></i>
-          </a>
-        </div>
-      </div>
 
     </div>
 
