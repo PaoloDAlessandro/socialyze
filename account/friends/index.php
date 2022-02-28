@@ -216,7 +216,7 @@
       function removeUserToList(users) {
         let usersList = document.getElementsByClassName('friend-single-result');
         var userListId = [''];
-        for (let i = 1; i < usersList.length; i++) {
+        for (let i = 0; i < usersList.length; i++) {
           if (!userListId.includes(usersList[i]).id) {
             userListId.push(usersList[i].id);
           }
