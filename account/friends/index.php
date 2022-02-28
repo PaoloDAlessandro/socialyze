@@ -114,7 +114,7 @@
     <div class="friends-container">
 
       <?php
-        $sql = "SELECT users.username, users.avatar_name FROM users WHERE users.id IN (SELECT IF(friend_requests.id_user_sender = 7, friend_requests.id_user_receiver, friend_requests.id_user_sender) FROM friend_requests WHERE (friend_requests.id_user_sender = 7 OR friend_requests.id_user_receiver = 7) AND friend_requests.status = 1)";
+        $sql = "SELECT users.username, users.avatar_name FROM users WHERE users.id IN (SELECT IF(friend_requests.id_user_sender = '$id_user', friend_requests.id_user_receiver, friend_requests.id_user_sender) FROM friend_requests WHERE (friend_requests.id_user_sender = '$id_user' OR friend_requests.id_user_receiver = '$id_user') AND friend_requests.status = 1)";
         $result = $con->query($sql);
         if (mysqli_num_rows($result) != 0){
           while($row = mysqli_fetch_assoc($result)) {
