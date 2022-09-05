@@ -33,6 +33,7 @@
         $row = mysqli_fetch_assoc($result);
         if ($row['lvl'] != 1){
           echo "ciao";
+        }
       }
     }
     else {
