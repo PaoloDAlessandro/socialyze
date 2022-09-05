@@ -32,8 +32,8 @@
         $result = $con->query($sql);
         $row = mysqli_fetch_assoc($result);
         if ($row['lvl'] != 1){
-          echo "ciao";
-        }
+          header("Location:https://socialyze.sa-projects.it/account/badges/quiz/?category='$category'");
+        
       }
     }
     else {
