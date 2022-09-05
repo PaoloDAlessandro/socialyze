@@ -32,8 +32,7 @@
         $result = $con->query($sql);
         $row = mysqli_fetch_assoc($result);
         if ($row['lvl'] != 1){
-          header("Location:https://socialyze.sa-projects.it/account/badges/quiz/?category=math");
-        
+          echo "ciao";
       }
     }
     else {
