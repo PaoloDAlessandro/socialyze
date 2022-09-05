@@ -31,8 +31,8 @@
         $sql = "SELECT lvl FROM `badges` WHERE id_user = '$user_id' AND category = '$category'";
         $result = $con->query($sql);
         $row = mysqli_fetch_assoc($result);
-        if ($row['lvl'] != 1){
-          echo "ciao";
+        if ($row['lvl'] != 1) {
+          header('Location:/account/badges/quiz/?category=coding');
         }
       }
     }
